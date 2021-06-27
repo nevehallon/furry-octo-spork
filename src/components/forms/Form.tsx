@@ -4,12 +4,14 @@ import TextInput from "./TextInput";
 import { NextStep } from "./NextStep";
 import { BillBtn } from "./BillBtn";
 import { GOP } from "../../interfaces/genericObjectProps";
+import { useHistory } from "react-router-dom";
 
 interface Props {}
 
 const DEV_VAR = false;
 
 export const Form = ({ currentStep, setStep }: Props & GOP) => {
+  const { push } = useHistory();
   const [fName, setFName] = useState("");
   const [mName, setMName] = useState("");
   const [lName, setLName] = useState("");
@@ -38,7 +40,7 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    (fName && mName && lName && compName && setStep(1)) || setError("Please fill out all fields to proceed.");
+    (fName && mName && lName && compName && push("/step")) || setError("Please fill out all fields to proceed.");
   };
   const handleSet = (val: GOP) => {
     setBillState({ ...billState, ...val });
@@ -108,7 +110,7 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
         )}
         {!!currentStep && !DEV_VAR && (
           <NextStep
-            setStep={(val: number) => setStep(val)}
+            setStep={(val: number) => push(val > 1 ? "/step2" : "step")}
             formData={{ fName, mName, lName, compName }}
             {...{ billState, setHL, billEl, currentStep }}
           />
@@ -141,7 +143,7 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
             <BillBtn billType={"tv"} setSelected={(val: GOP) => handleSet(val)} isSelected={tv} />
             <BillBtn billType={"other"} setSelected={(val: GOP) => handleSet(val)} isSelected={other} />
           </div>
-          <button className={`${styles["btn-danger"]} ${styles.btn}`} onClick={() => setStep(2)}>
+          <button className={`${styles["btn-danger"]} ${styles.btn}`} onClick={() => push("/step2")}>
             <span>Sign and Send Contract to Tenant(s)</span>
             <img
               alt=""
