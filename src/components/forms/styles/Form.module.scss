@@ -52,13 +52,14 @@
     width: clamp(230px, 100%, 650px);
     padding-left: 10%;
     @media only screen and (max-width: 1190px) {
-      min-width: 100%;
-      margin: 20px 0;
-
+      &:not(.nextPart2) {
+        min-width: 100%;
+        margin: 20px 0;
+      }
       @media only screen and (max-width: 345px) {
         padding: 20px 2% !important;
 
-        & :not(.formcontainer2) button {
+        & :not(.formContainer2) button {
           width: 100%;
           margin-right: -10px;
         }
@@ -129,7 +130,7 @@
   box-shadow: 0 0 10px #fff;
 }
 .highlight-text {
-  transform: scale(1.1) translate(25px, -10px);
+  transform: translate(5px, -10px);
   color: $omnihouse-plus-action;
 }
 .trackerPc {

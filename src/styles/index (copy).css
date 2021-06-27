@@ -10,22 +10,28 @@ $omnihouse-plus-action: #93227f;
   letter-spacing: 2px;
 }
 @mixin body-1 {
-  @extend .base-text;
-  @extend .base-bold2;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
 }
 @mixin button-1 {
-  @extend .base-text;
-  @extend .base-bold;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
 }
 @mixin headline-2 {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-size: 25px;
-  @extend .base-bold;
+  font-weight: 700;
+  line-height: normal;
 }
 @mixin subtitle-2 {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-size: 20px;
-  @extend .base-bold2;
+  font-weight: 400;
+  line-height: normal;
 }
 @mixin scrollBar {
   &.scrollbar {
@@ -53,34 +59,21 @@ $omnihouse-plus-action: #93227f;
     margin: 0px 0 10px;
   }
 }
-.bottomText,
-.btn {
-  text-align: center;
-}
-.btnImg,
-.vector {
-  align-self: stretch;
-}
-.base-text {
-  font-family: Roboto;
-  font-size: 16px;
-}
-.base-bold {
-  font-weight: 700;
-  line-height: normal;
-}
-.base-bold2 {
-  font-weight: 400;
-  line-height: normal;
+
+button {
+  border-radius: 0;
 }
 button {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+button {
   overflow: visible;
+}
+button {
   text-transform: none;
-  cursor: pointer;
 }
 button,
 html [type="button"] {
@@ -94,6 +87,7 @@ button::-moz-focus-inner {
 .btn {
   display: inline-block;
   font-weight: 400;
+  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -119,11 +113,14 @@ button::-moz-focus-inner {
 .btn:disabled {
   opacity: 0.65;
 }
+
 .header {
   margin: 30px 0 10px;
   @include headline-2;
   color: #fff;
 }
+
+/* CenterContainer */
 .logoutBlack24dp2 {
   padding: 5.25px;
   display: flex;
@@ -131,23 +128,27 @@ button::-moz-focus-inner {
 }
 .vector {
   flex: 1;
+  align-self: stretch;
   object-fit: cover;
 }
-.marketplaceButton,
-.marketplaceButtonTwo {
-  align-items: flex-start;
+/* SideMenu */
+
+.marketplaceButton {
+  background-color: $omnicheck;
   border-radius: 25px;
   padding: 10px;
   display: flex;
-}
-.marketplaceButton {
-  background-color: $omnicheck;
+  align-items: flex-start;
 }
 .marketplaceButtonTwo {
-  background-color: #20c174;
+  background-color: rgba(32, 193, 116, 1);
+  border-radius: 25px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
 }
 .marketplaceButtonThree {
-  background-color: #656262;
+  background-color: rgba(101, 98, 98, 1);
   border-radius: 25px;
   padding: 10px;
   display: flex;
@@ -166,17 +167,19 @@ button::-moz-focus-inner {
 .bottomText {
   width: 100%;
   height: 15.97%;
-  color: #f9f3fa;
+  color: rgba(249, 243, 250, 1);
+  text-align: center;
   @include button-1;
   font-size: 1em;
   max-width: 80px;
 }
 .btnImg {
   width: 100%;
+  align-self: stretch;
   -o-object-fit: cover;
   object-fit: cover;
   filter: blur(1.5px);
-  transition: 0.3s ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 .flip {
   transform: rotate(180deg);

@@ -8,6 +8,8 @@ import SideMenu from "./components/menus/SideMenu";
 import { Size, useWindowSize } from "./hooks/useWindowSize";
 import styles from "./styles/App.module.scss";
 
+const { app, menuContainer, collapsed } = styles;
+
 function App(): JSX.Element {
   const { width }: { width: Size["width"] } = useWindowSize();
   const hide = (width || 0) < 340 + 416;
@@ -27,8 +29,8 @@ function App(): JSX.Element {
   }, [width, currentStep, hide]);
 
   return (
-    <div className={styles.App}>
-      <div className={[styles.menuContainer, hide && styles.collapsed].join(" ")}>
+    <div className={app}>
+      <div className={[menuContainer, hide && collapsed].join(" ")}>
         <SideMenu hide={addClass} passThru={passThru} setPassThru={(bool: boolean) => setPassThru(bool)} />
         <InnerSideMenu
           {...{ currentStep, setStep }}

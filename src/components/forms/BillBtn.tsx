@@ -1,6 +1,8 @@
 import { GOP } from "../../interfaces/genericObjectProps";
 import styles from "./styles/BillBtn.module.scss";
 
+const { btnStatus, btnSelected, btn } = styles;
+
 interface Props {
   billType: string;
   isSelected: boolean;
@@ -9,9 +11,7 @@ interface Props {
 
 export default ({ billType, isSelected, setSelected }: Props): JSX.Element => (
   <button
-    className={`${styles.btnStatus} ${isSelected && styles.btnSelected} ${
-      styles.btn
-    }`}
+    className={`${btnStatus} ${isSelected && btnSelected} ${btn}`}
     onClick={() => setSelected({ [billType]: !isSelected })}
     type="button"
   >

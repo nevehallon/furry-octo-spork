@@ -1,5 +1,7 @@
 import styles from "./styles/Form.module.scss";
 
+const { dropDownMenu, rectangle518, labelTwo, label } = styles;
+
 export default function TextInput({
   placeholder,
   setValue,
@@ -14,11 +16,11 @@ export default function TextInput({
     setValue(val);
   };
   return (
-    <div className={styles.dropDownMenu}>
-      <div className={styles.rectangle518} />
-      <div className={styles.labelTwo}>
+    <div className={dropDownMenu}>
+      <div className={rectangle518} />
+      <div className={labelTwo}>
         <input
-          className={styles.label}
+          className={label}
           onChange={(e) => handleChange(e)}
           placeholder={placeholder}
           style={{ background: "transparent", border: "none" }}

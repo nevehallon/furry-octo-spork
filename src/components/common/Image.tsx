@@ -9,13 +9,20 @@ export interface ImageProps {
   children?: JSX.Element[];
 }
 
-export default ({ alt, cName, cName2, imgClass, src, children }: ImageProps): JSX.Element => (
+export default ({
+  alt,
+  cName,
+  cName2,
+  imgClass,
+  src,
+  children,
+}: ImageProps): JSX.Element => (
   <>
     <div className={cName}>
       <div className={cName2}>
         <img alt={alt || "image"} className={imgClass} src={src} />
       </div>
     </div>
-    {children?.map((x) => x)}
+    {children}
   </>
 );
