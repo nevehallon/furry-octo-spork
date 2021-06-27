@@ -1,0 +1,30 @@
+@import "../../../styles/index.scss";
+.btnStatus {
+  color: #fff;
+  background-color: #3c363b;
+  border-color: #3c363b;
+  display: block;
+  width: 90%;
+  padding: 1rem 0.75rem;
+  margin: 20px auto 0;
+  @include body-1;
+  font-size: 1rem;
+  @include extra-bold;
+  letter-spacing: 1px;
+
+  &:hover {
+    color: #fff;
+    background-color: #3c363b;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem currentColor;
+  }
+  &:disabled {
+    color: #fff;
+    background-color: #3c363b;
+    border-color: #3c363b;
+  }
+  &.btnSelected {
+    background-color: $omnihouse-plus-action;
+  }
+}

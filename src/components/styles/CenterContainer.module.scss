@@ -1,0 +1,30 @@
+@import "../../styles/index.scss";
+
+.operationsScreen {
+  background-color: #2d232b;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-self: stretch;
+  background-image: url("https://static.overlay-tech.com/assets/c5e6c697-030e-409b-994f-8818bcd4a26e.svg");
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 42.5px);
+}
+.headerBar {
+  background-color: $black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.logoutBlack24dp2 {
+  padding: 5.25px;
+  display: flex;
+  align-items: center;
+}
+.vector {
+  flex: 1;
+  align-self: stretch;
+  object-fit: cover;
+}

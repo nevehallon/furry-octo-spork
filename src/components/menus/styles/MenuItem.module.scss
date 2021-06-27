@@ -1,0 +1,40 @@
+@import "../../../styles/index.scss";
+
+.menuItem {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+.group13 {
+  display: flex;
+  align-items: center;
+}
+.frame4 {
+  display: flex;
+  align-items: flex-start;
+}
+.active {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  width: 25.5px;
+  height: 25.5px;
+  min-width: 25.5px;
+  min-height: 25.5px;
+}
+.ellipse66 {
+  width: 100%;
+  border-radius: 50%;
+  flex: 1;
+  align-self: stretch;
+}
+.frame3 {
+  padding: 13px 14px 13px 13px;
+  display: flex;
+  align-items: flex-start;
+}
+.myProperties {
+  width: 100%;
+  color: rgba(205, 204, 204, 1);
+  @include button-1;
+}

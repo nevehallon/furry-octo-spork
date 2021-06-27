@@ -1,0 +1,303 @@
+@import "../../../styles/index.scss";
+
+.topWrapper {
+  width: 100%;
+  display: flex;
+  place-content: center;
+  &.nextPart {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    padding: 0 20px;
+    gap: 15px;
+
+    @media only screen and (max-width: 1190px) {
+      display: block;
+      overflow-y: scroll;
+      height: 100vh;
+      overflow-x: hidden;
+      padding: 0 0 100px;
+      max-height: calc(100vh - 42.5px);
+    }
+  }
+  &.nextPart2 {
+    @extend .extendedForm;
+    gap: 15px !important;
+    align-self: center !important;
+    .formContainer {
+      height: 97%;
+      align-self: end;
+      width: clamp(47vw, 70%, 450px);
+      @media only screen and (max-width: 756px) {
+        width: clamp(90vw, 70%, 450px);
+      }
+    }
+    .btn-danger {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0.9rem 0.5rem !important;
+    }
+  }
+}
+
+.formContainer {
+  background-color: rgba(28, 25, 29, 1);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: clamp(350px, 70%, 450px);
+  box-shadow: 0 0 20px 0px #201b20;
+  &.nextPart {
+    width: clamp(230px, 100%, 650px);
+    padding-left: 10%;
+    @media only screen and (max-width: 1190px) {
+      min-width: 100%;
+      margin: 20px 0;
+
+      @media only screen and (max-width: 345px) {
+        padding: 20px 2% !important;
+
+        & :not(.formcontainer2) button {
+          width: 100%;
+          margin-right: -10px;
+        }
+      }
+    }
+  }
+  &.formContainer2 {
+    padding: 20px;
+    .header {
+      transition: all 300ms ease-in-out;
+      @include subtitle-2;
+      @include extra-bold;
+      letter-spacing: 1px;
+    }
+  }
+
+  &.nextPart2 {
+    padding: 20px;
+  }
+}
+
+.extendedForm {
+  /* Part 2 */
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-self: baseline;
+  gap: 50px;
+  place-items: center;
+
+  .btn-danger {
+    place-items: center;
+    min-width: 150px;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    width: 82%;
+    padding: 0.7rem 0.5rem;
+    @include body-1;
+    @include extra-bold;
+    letter-spacing: 1px;
+    font-size: clamp(0.95rem, 1vw, 1.2rem);
+    height: 100%;
+    white-space: normal;
+
+    &:hover {
+      color: #fff;
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+    }
+    &:disabled {
+      color: #fff;
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+  }
+  @media only screen and (max-width: 1190px) {
+    width: 100%;
+  }
+}
+
+.highlight {
+  box-shadow: 0 0 10px #fff;
+}
+.highlight-text {
+  transform: scale(1.1) translate(25px, -10px);
+  color: $omnihouse-plus-action;
+}
+.trackerPc {
+  width: 90%;
+  height: calc(5.73% - 20px);
+  margin: 0 auto 7px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.frame224 {
+  background-color: rgba(78, 68, 76, 1);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.rectangle254 {
+  width: 20%;
+  height: 8px;
+  background-color: $omnihouse-plus-action;
+  border-radius: 6px;
+}
+.frame480 {
+  display: flex;
+  place-content: center;
+  position: relative;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+.p {
+  color: rgba(249, 243, 250, 1);
+  @include headline-2;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.dropDownMenu {
+  height: calc(13.29% - 17px);
+  margin: 0 20px;
+  padding: 1px 0 16px;
+  position: relative;
+}
+.rectangle518 {
+  width: 99.54%;
+  height: 70.77%;
+  background-color: rgba(27, 23, 28, 1);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  border: 1px solid $omnihouse-plus-action;
+}
+.labelTwo {
+  position: relative;
+}
+input:focus {
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 0 7.5px #fff inset;
+}
+.label {
+  width: 100%;
+  @include subtitle-2;
+  font-weight: bolder;
+  width: 99%;
+  margin: 0.5px;
+  padding: 10px;
+  color: #fff;
+
+  &::-webkit-input-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  &::-moz-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  &::-ms-input-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
+  }
+}
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nextButtonTwo {
+  justify-self: flex-end;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent !important;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid $omnihouse-plus-action;
+  }
+  border-radius: 1em;
+}
+.nextButton {
+  display: flex;
+  align-items: flex-start;
+}
+.frame12 {
+  padding: 17px 10px 10px 15px;
+  display: flex;
+  align-items: flex-start;
+}
+.next {
+  height: 12px;
+  width: 42px;
+  color: rgba(249, 243, 250, 1);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  @include button-1;
+}
+.frame13 {
+  padding: 10px 5px 10px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.nextTwo {
+  display: flex;
+  align-items: center;
+  width: 10.74px;
+  height: 18.76px;
+}
+.vector {
+  width: 100%;
+  align-self: stretch;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
