@@ -1,8 +1,15 @@
-import React, { FormEvent, FormEventHandler, forwardRef, useEffect, useRef, useState } from "react";
+import {
+  FormEvent,
+  FormEventHandler,
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./styles/Form.module.scss";
 import TextInput from "./TextInput";
 import { NextStep } from "./NextStep";
-import { BillBtn } from "./BillBtn";
+import BillBtn from "./BillBtn";
 import { GOP } from "../../interfaces/genericObjectProps";
 import { useHistory } from "react-router-dom";
 
@@ -40,7 +47,8 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    (fName && mName && lName && compName && push("/step")) || setError("Please fill out all fields to proceed.");
+    (fName && mName && lName && compName && push("/step")) ||
+      setError("Please fill out all fields to proceed.");
   };
   const handleSet = (val: GOP) => {
     setBillState({ ...billState, ...val });
@@ -48,14 +56,14 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
 
   return (
     <div
-      className={`${styles.topWrapper} ${(currentStep === 1 || DEV_VAR) && styles.nextPart} ${
-        (currentStep > 1 || DEV_VAR) && styles.nextPart2
-      }`}
+      className={`${styles.topWrapper} ${
+        (currentStep === 1 || DEV_VAR) && styles.nextPart
+      } ${(currentStep > 1 || DEV_VAR) && styles.nextPart2}`}
     >
       <div
-        className={`${styles.formContainer} ${(currentStep || DEV_VAR) && styles.nextPart} ${
-          (currentStep > 1 || DEV_VAR) && styles.nextPart2
-        }`}
+        className={`${styles.formContainer} ${
+          (currentStep || DEV_VAR) && styles.nextPart
+        } ${(currentStep > 1 || DEV_VAR) && styles.nextPart2}`}
       >
         {!currentStep && !DEV_VAR && (
           <>
@@ -66,24 +74,37 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
             </div>
             <div className={styles.frame480}>
               <p className={styles.p}>
-                Enter your full name and/or the company name that the tenant(s) is entering the agreement with
+                Enter your full name and/or the company name that the tenant(s)
+                is entering the agreement with
               </p>
             </div>
-            {error && <span style={{ color: "red", textAlign: "center", fontSize: "26px" }}>*{error}*</span>}
+            {error && (
+              <span
+                style={{ color: "red", textAlign: "center", fontSize: "26px" }}
+              >
+                *{error}*
+              </span>
+            )}
 
             <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-              <TextInput inputVal={fName} setValue={(val: string) => setFName(val)} num="" placeholder="First name" />
+              <TextInput
+                inputVal={fName}
+                setValue={(val: string) => setFName(val)}
+                placeholder="First name"
+              />
               <TextInput
                 inputVal={mName}
                 setValue={(val: string) => setMName(val)}
-                num="Two"
                 placeholder="Middle name(s)"
               />
-              <TextInput inputVal={lName} setValue={(val: string) => setLName(val)} num="Three" placeholder="Surname" />
+              <TextInput
+                inputVal={lName}
+                setValue={(val: string) => setLName(val)}
+                placeholder="Surname"
+              />
               <TextInput
                 inputVal={compName}
                 setValue={(val: string) => setCompName(val)}
-                num="Four"
                 placeholder="Company name"
               />
 
@@ -117,7 +138,10 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
         )}
       </div>
       {currentStep > 1 && (
-        <button className={`${styles["btn-danger"]} ${styles.btn}`} onClick={() => alert("Thank you!")}>
+        <button
+          className={`${styles["btn-danger"]} ${styles.btn}`}
+          onClick={() => alert("Thank you!")}
+        >
           Confirm Contract
           <img
             alt=""
@@ -133,17 +157,49 @@ export const Form = ({ currentStep, setStep }: Props & GOP) => {
               (!!currentStep || DEV_VAR) && styles.nextPart
             } ${highlight && styles.highlight}`}
           >
-            <h3 ref={billEl} className={`${styles.header} ${highlight && styles["highlight-text"]}`}>
+            <h3
+              ref={billEl}
+              className={`${styles.header} ${
+                highlight && styles["highlight-text"]
+              }`}
+            >
               Which bills are included?
             </h3>
-            <BillBtn billType={"electric"} setSelected={(val: GOP) => handleSet(val)} isSelected={electric} />
-            <BillBtn billType={"gas"} setSelected={(val: GOP) => handleSet(val)} isSelected={gas} />
-            <BillBtn billType={"water"} setSelected={(val: GOP) => handleSet(val)} isSelected={water} />
-            <BillBtn billType={"internet"} setSelected={(val: GOP) => handleSet(val)} isSelected={internet} />
-            <BillBtn billType={"tv"} setSelected={(val: GOP) => handleSet(val)} isSelected={tv} />
-            <BillBtn billType={"other"} setSelected={(val: GOP) => handleSet(val)} isSelected={other} />
+            <BillBtn
+              billType={"electric"}
+              setSelected={(val: GOP) => handleSet(val)}
+              isSelected={electric}
+            />
+            <BillBtn
+              billType={"gas"}
+              setSelected={(val: GOP) => handleSet(val)}
+              isSelected={gas}
+            />
+            <BillBtn
+              billType={"water"}
+              setSelected={(val: GOP) => handleSet(val)}
+              isSelected={water}
+            />
+            <BillBtn
+              billType={"internet"}
+              setSelected={(val: GOP) => handleSet(val)}
+              isSelected={internet}
+            />
+            <BillBtn
+              billType={"tv"}
+              setSelected={(val: GOP) => handleSet(val)}
+              isSelected={tv}
+            />
+            <BillBtn
+              billType={"other"}
+              setSelected={(val: GOP) => handleSet(val)}
+              isSelected={other}
+            />
           </div>
-          <button className={`${styles["btn-danger"]} ${styles.btn}`} onClick={() => push("/step2")}>
+          <button
+            className={`${styles["btn-danger"]} ${styles.btn}`}
+            onClick={() => push("/step2")}
+          >
             <span>Sign and Send Contract to Tenant(s)</span>
             <img
               alt=""

@@ -1,17 +1,14 @@
-import React, { useState } from "react";
 import styles from "./styles/Form.module.scss";
 
 export default function TextInput({
   placeholder,
-  num,
   setValue,
   inputVal,
 }: {
   placeholder: string;
-  num: string;
   setValue: (val: string) => void;
   inputVal: string;
-}) {
+}): JSX.Element {
   const handleChange = ({ target: { value } }: any) => {
     const val = value.trim();
     setValue(val);
@@ -21,11 +18,11 @@ export default function TextInput({
       <div className={styles.rectangle518} />
       <div className={styles.labelTwo}>
         <input
-          style={{ background: "transparent", border: "none" }}
-          type="text"
-          placeholder={placeholder}
           className={styles.label}
           onChange={(e) => handleChange(e)}
+          placeholder={placeholder}
+          style={{ background: "transparent", border: "none" }}
+          type="text"
           value={inputVal}
         />
       </div>

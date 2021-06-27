@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import styles from "./styles/App.module.scss";
-import { SideMenu } from "./components/menus/SideMenu";
-import { InnerSideMenu } from "./components/menus/InnerSideMenu";
-import { CenterContainer } from "./components/CenterContainer";
-import { Size, useWindowSize } from "./hooks/useWindowSize";
-
+/* eslint-disable no-nested-ternary */
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function App() {
+import CenterContainer from "./components/CenterContainer";
+import InnerSideMenu from "./components/menus/InnerSideMenu";
+import SideMenu from "./components/menus/SideMenu";
+import { Size, useWindowSize } from "./hooks/useWindowSize";
+import styles from "./styles/App.module.scss";
+
+function App(): JSX.Element {
   const { width }: { width: Size["width"] } = useWindowSize();
   const hide = (width || 0) < 340 + 416;
   const [addClass, setAddClass] = useState(hide);
@@ -23,17 +24,17 @@ function App() {
     } else {
       setAddClass(hide);
     }
-  }, [width, currentStep]);
+  }, [width, currentStep, hide]);
 
   return (
     <div className={styles.App}>
       <div className={[styles.menuContainer, hide && styles.collapsed].join(" ")}>
-        <SideMenu passThru={passThru} setPassThru={(bool: boolean) => setPassThru(bool)} hide={addClass} />
+        <SideMenu hide={addClass} passThru={passThru} setPassThru={(bool: boolean) => setPassThru(bool)} />
         <InnerSideMenu
           {...{ currentStep, setStep }}
+          hide={addClass}
           passThru={passThru}
           setPassThru={(bool: boolean) => setPassThru(bool)}
-          hide={addClass}
         />
       </div>
       <CenterContainer {...{ currentStep, setStep }} />

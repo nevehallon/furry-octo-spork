@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.scss";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import App from "./App";
 
-import { BrowserRouter as Router } from "react-router-dom";
+window.React = React;
 
 ReactDOM.render(
   <React.StrictMode>

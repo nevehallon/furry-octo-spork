@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { GOP } from "../../interfaces/genericObjectProps";
 import styles from "./styles/NextStep.module.scss";
 
@@ -26,7 +26,14 @@ export function EditIcon() {
     </>
   );
 }
-export function Section({ fName, mName, lName, compName, sectionNum, currentStep }: NextStepProps["formData"] & GOP) {
+export function Section({
+  fName,
+  mName,
+  lName,
+  compName,
+  sectionNum,
+  currentStep,
+}: NextStepProps["formData"] & GOP) {
   return (
     <div className={`${styles.section} ${currentStep > 1 && styles.step2}`}>
       <p className={styles.section1}>
@@ -39,7 +46,9 @@ export function Section({ fName, mName, lName, compName, sectionNum, currentStep
   );
 }
 export function Section2({ billState, currentStep }: GOP) {
-  const billArr = Object.keys(billState).filter((key, i, arr) => billState[key] && key);
+  const billArr = Object.keys(billState).filter(
+    (key, i, arr) => billState[key] && key
+  );
   return (
     <div className={`${styles.section} ${currentStep > 1 && styles.step2}`}>
       <p className={`${styles.section1} ${styles.section2}`}>
@@ -56,14 +65,28 @@ export function Section2({ billState, currentStep }: GOP) {
   );
 }
 
-export function NextStep({ formData, setStep, billState, setHL, billEl, currentStep }: NextStepProps & GOP) {
+export function NextStep({
+  formData,
+  setStep,
+  billState,
+  setHL,
+  billEl,
+  currentStep,
+}: NextStepProps & GOP) {
   const [TO, setTO] = useState(0);
-  const scroll = () => (billEl?.current as HTMLElement)?.scrollIntoView({ behavior: "smooth" });
+  const scroll = () =>
+    (billEl?.current as HTMLElement)?.scrollIntoView({ behavior: "smooth" });
   const display = currentStep < 2;
   return (
     <>
-      <h3 className={styles.header}>{display ? "Preview & Edit Terms of Contract" : "Preview Contract"}</h3>
-      <div className={`${styles.sectionContainer}  ${styles.scrollbar} ${currentStep > 1 && styles.step2}`}>
+      <h3 className={styles.header}>
+        {display ? "Preview & Edit Terms of Contract" : "Preview Contract"}
+      </h3>
+      <div
+        className={`${styles.sectionContainer}  ${styles.scrollbar} ${
+          currentStep > 1 && styles.step2
+        }`}
+      >
         <div className={styles.wrapper}>
           <Section {...formData} {...{ currentStep }} sectionNum={1} />
           <button className={styles.editBtn} onClick={() => setStep(0)}>
