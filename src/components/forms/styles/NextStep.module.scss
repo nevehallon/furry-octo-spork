@@ -4,8 +4,8 @@
 */
 .header {
   margin: 30px 0 10px;
-  @include headline-2;
-  @include extra-bold;
+  @extend .headline-2;
+  @extend .extra-bold;
 }
 .sectionContainer {
   display: flex;
@@ -13,7 +13,7 @@
   max-height: 700px;
   margin-bottom: -20px;
 
-  @include scrollBar;
+  @extend .scroll-bar;
   &.step2 {
     padding-bottom: 600px;
   }
@@ -58,7 +58,7 @@
     grid-template-rows: repeat(4, auto);
     gap: 15px;
     text-align: center;
-    @include body-1;
+    @extend .body-1;
     color: rgba(5, 255, 0, 1);
   }
   .section2 {
@@ -73,15 +73,15 @@
     background: transparent;
 
     .section1 {
-      @include button-1;
+      @extend .button-1;
       text-align: initial;
       color: #fff;
       * {
-        @include button-1;
+        @extend .button-1;
         color: #fff;
       }
       .Emphasis0 {
-        @include extra-bold;
+        @extend .extra-bold;
       }
     }
     .section2 {
@@ -90,18 +90,18 @@
   }
 }
 .Emphasis0 {
-  @include body-1;
+  @extend .body-1;
   color: rgba(235, 2, 255, 1);
-  @include extra-bold;
+  @extend .extra-bold;
   letter-spacing: 1px;
 }
 .Emphasis1 {
-  @include subtitle-2;
+  @extend .subtitle-2;
   color: rgba(249, 243, 250, 1);
 }
 .Emphasis2:not(.step2 *) {
-  @include body-1;
-  @include extra-bold;
+  @extend .body-1;
+  @extend .extra-bold;
   letter-spacing: 1px;
   color: rgba(249, 243, 250, 1);
 }

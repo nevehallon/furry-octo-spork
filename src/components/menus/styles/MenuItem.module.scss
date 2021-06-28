@@ -36,5 +36,5 @@
 .myProperties {
   width: 100%;
   color: rgba(205, 204, 204, 1);
-  @include button-1;
+  @extend .button-1;
 }

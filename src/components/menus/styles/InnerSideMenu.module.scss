@@ -53,7 +53,7 @@
 }
 .pageTitle {
   color: rgba(249, 243, 250, 1);
-  @include headline-2;
+  @extend .headline-2;
 }
 .menuItem {
   display: flex;

@@ -70,8 +70,8 @@
     padding: 20px;
     .header {
       transition: all 300ms ease-in-out;
-      @include subtitle-2;
-      @include extra-bold;
+      @extend .subtitle-2;
+      @extend .extra-bold;
       letter-spacing: 1px;
     }
   }
@@ -100,8 +100,8 @@
     border-color: #dc3545;
     width: 82%;
     padding: 0.7rem 0.5rem;
-    @include body-1;
-    @include extra-bold;
+    @extend .body-1;
+    @extend .extra-bold;
     letter-spacing: 1px;
     font-size: clamp(0.95rem, 1vw, 1.2rem);
     height: 100%;
@@ -161,13 +161,15 @@
   place-content: center;
   position: relative;
   height: 100px;
-  width: 100%;
   overflow: hidden;
+  margin: 0 -10px 5px 0;
 }
 .p {
   color: rgba(249, 243, 250, 1);
-  @include headline-2;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  @extend .body-1;
+  @extend .extra-bold;
+  letter-spacing: 0.5px;
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
 }
 .form {
   width: 100%;
@@ -201,7 +203,7 @@ input:focus {
 }
 .label {
   width: 100%;
-  @include subtitle-2;
+  @extend .subtitle-2;
   font-weight: bolder;
   width: 99%;
   margin: 0.5px;
@@ -283,7 +285,7 @@ input:focus {
   display: flex;
   align-items: center;
   text-align: center;
-  @include button-1;
+  @extend .button-1;
 }
 .frame13 {
   padding: 10px 5px 10px 0;

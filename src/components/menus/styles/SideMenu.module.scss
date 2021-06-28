@@ -126,7 +126,7 @@
   position: absolute;
   left: -10px;
   bottom: -10px;
-  @include body-1;
+  @extend .body-1;
 }
 .vectorThree {
   width: 83.33%;
@@ -143,7 +143,7 @@
   position: absolute;
   left: 0;
   top: 100px;
-  @include body-1;
+  @extend .body-1;
 }
 .component1Three {
   margin-bottom: auto;

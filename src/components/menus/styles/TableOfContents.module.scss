@@ -8,7 +8,7 @@
   }
 }
 .container {
-  @include scrollBar;
+  @extend .scroll-bar;
   &::-webkit-scrollbar {
     width: 4px;
   }
@@ -38,13 +38,13 @@
   margin: 0 0 20px;
 }
 .tableOfContents {
-  @include headline-2;
+  @extend .headline-2;
   color: #eb00ff;
   align-self: stretch;
   margin-bottom: 11px;
 }
 .sectionTOC {
-  @include headline-2;
+  @extend .headline-2;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   color: #fff;
   margin-bottom: 9px;
@@ -53,6 +53,6 @@
 
 .text {
   margin: 0 0 5px;
-  @include subtitle-2;
+  @extend .subtitle-2;
   color: #fff;
 }
