@@ -1,0 +1,104 @@
+@import "../../../styles/index.scss";
+
+.secondaryHeader {
+  @extend .header;
+  @include extra-bold;
+}
+.sectionContainer {
+  @extend .flex-column;
+  max-height: 700px;
+  margin-bottom: -20px;
+
+  @extend .scroll-bar;
+  &.finalStep {
+    padding-bottom: 600px;
+  }
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  .editBtn {
+    padding: 0 5px 0 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    .vector {
+      width: 100%;
+      transition: all 00ms ease-in-out;
+    }
+    &:hover {
+      .vector {
+        transition: all 300ms ease-in-out;
+        filter: drop-shadow(2px 4px 6px $omnihouse-plus-action);
+        transform: scale(1.2);
+      }
+    }
+    border-radius: 1em;
+  }
+}
+.section {
+  height: 350px;
+  background-color: rgba(52, 51, 28, 0.91);
+  border-radius: 10px;
+  padding: 13px 0 22px;
+  @extend .flex-start;
+  margin: 0 0 20px;
+
+  .section1 {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 15px;
+    text-align: center;
+    @include body-1;
+    color: rgba(5, 255, 0, 1);
+  }
+  .section2 {
+    padding-left: 15px;
+    text-align: initial;
+    .emphasis1 {
+      margin-bottom: -15px;
+    }
+  }
+  &.finalStep {
+    height: auto;
+    background: transparent;
+
+    .section1 {
+      @include button-1;
+      text-align: initial;
+      color: #fff;
+      * {
+        @include button-1;
+        color: #fff;
+      }
+      .emphasis0 {
+        @include extra-bold;
+      }
+    }
+    .section2 {
+      padding-left: 0;
+    }
+  }
+  .emphasis0 {
+    @include body-1;
+    color: #eb02ff;
+    @include extra-bold;
+    letter-spacing: 1px;
+  }
+  .emphasis1 {
+    @include subtitle-2;
+    color: #f9f3fa;
+  }
+  &:not(.finalStep) {
+    .emphasis2 {
+      @include body-1;
+      @include extra-bold;
+      letter-spacing: 1px;
+      color: #f9f3fa;
+    }
+  }
+}
