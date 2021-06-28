@@ -1,28 +1,31 @@
 @import "../../../styles/index.scss";
-.btnStatus {
+.primary {
+  background: #3c363b;
   color: #fff;
-  background-color: #3c363b;
+}
+.btnStatus,
+.btnStatus:disabled {
   border-color: #3c363b;
+}
+.btnStatus {
+  @extend .body-1;
+  @extend .primary;
+  @extend .extra-bold;
   display: block;
   width: 90%;
   padding: 1rem 0.75rem;
   margin: 20px auto 0;
-  @extend .body-1;
   font-size: 1rem;
-  @extend .extra-bold;
   letter-spacing: 1px;
 
   &:hover {
-    color: #fff;
-    background-color: #3c363b;
+    @extend .primary;
   }
   &:focus {
     box-shadow: 0 0 0 0.2rem currentColor;
   }
   &:disabled {
-    color: #fff;
-    background-color: #3c363b;
-    border-color: #3c363b;
+    @extend .primary;
   }
   &.btnSelected {
     background-color: $omnihouse-plus-action;

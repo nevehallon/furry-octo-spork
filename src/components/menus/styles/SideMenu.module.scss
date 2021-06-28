@@ -1,14 +1,5 @@
 @import "../../../styles/index.scss";
 
-/*
-// marketplaceButtonTwo
-// group
-// vector
-// bottomText
-
-
-*/
-
 .sideMenu {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -62,21 +53,6 @@
     transform: scale(1.4);
   }
 }
-.spacer {
-  width: 50%;
-  height: 0.09%;
-  background-color: rgba(78, 68, 76, 1);
-}
-.component1 {
-  padding: 0 10px 11px;
-  position: relative;
-}
-.referenceCheckWeb {
-  width: calc(100% - 30px);
-  height: calc(100% - 30px);
-  padding: 15px;
-  position: relative;
-}
 .selected::before {
   content: "";
   height: 50px;
@@ -87,84 +63,10 @@
   top: 238px;
   border-radius: 1rem;
 }
-.referencecheck {
-  width: 58px;
-  height: 58px;
-  position: relative;
-  display: flex;
-}
 .vectorTwo {
   width: 83.33%;
   height: 75%;
   position: absolute;
   left: 4.83px;
   top: 7.25px;
-}
-.component1Two {
-  padding: 0 10px 11px 0;
-  display: flex;
-  align-items: flex-start;
-}
-.rectangle627 {
-  width: 6.03%;
-  height: 39.81%;
-  background-color: rgba(237, 232, 232, 1);
-  margin-top: 32px;
-  margin-right: 2.89px;
-  border-radius: 0px 4px 4px 0px;
-}
-.relativeWrapperOne {
-  width: 91.53%;
-  align-self: stretch;
-  position: relative;
-}
-.contractBuilder {
-  width: 118.52%;
-  height: 17.59%;
-  color: rgba(249, 243, 250, 1);
-  text-align: center;
-  position: absolute;
-  left: -10px;
-  bottom: -10px;
-  @extend .body-1;
-}
-.vectorThree {
-  width: 83.33%;
-  height: 69.86%;
-  position: absolute;
-  left: 4.83px;
-  top: 9.67px;
-}
-.omniNews {
-  width: 100%;
-  height: 15.97%;
-  color: rgba(249, 243, 250, 1);
-  text-align: center;
-  position: absolute;
-  left: 0;
-  top: 100px;
-  @extend .body-1;
-}
-.component1Three {
-  margin-bottom: auto;
-  padding: 0 10px 11px;
-  position: relative;
-}
-.inventorycheckFilled {
-  width: calc(100% - 30px);
-  height: calc(100% - 30px);
-  border-radius: 30px;
-  padding: 15px;
-  position: relative;
-}
-.inventory {
-  padding: 10.63px 5.12px 10.03px 5.8px;
-  display: flex;
-  align-items: center;
-  width: 47.08px;
-  height: 37.34px;
-}
-.vectorFour {
-  width: 100%;
-  height: 100%;
 }

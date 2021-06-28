@@ -1,5 +1,5 @@
 import { Props } from "../../interfaces/InputsProps";
-import styles from "./styles/Form.module.scss";
+import styles from "./styles/Inputs.module.scss";
 import TextInput from "./TextInput";
 
 const {

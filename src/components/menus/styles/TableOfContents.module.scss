@@ -12,8 +12,7 @@
   &::-webkit-scrollbar {
     width: 4px;
   }
-  display: flex;
-  flex-direction: column;
+  @extend .flex-column;
   max-height: 60vh;
   margin-bottom: -20px;
   padding: 0 0 100px;
@@ -32,8 +31,7 @@
 }
 
 .group {
-  display: flex;
-  flex-direction: column;
+  @extend .flex-column;
   align-items: flex-start;
   margin: 0 0 20px;
 }

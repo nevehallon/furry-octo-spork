@@ -15,7 +15,7 @@ interface Props {
 export default ({ hide, passThru, setPassThru }: Props): JSX.Element => {
   const hidden = hide && passThru;
   return (
-    <div className={[sideMenu, hidden && collapsed, hide && shrink].join(" ")}>
+    <div className={`${sideMenu} ${hidden && collapsed} ${hide && shrink}`}>
       <div className={icon}>
         <img alt="" src="https://static.overlay-tech.com/assets/75f7c1aa-f1dd-4146-9f3d-f472a5ee6f29.svg" />
       </div>

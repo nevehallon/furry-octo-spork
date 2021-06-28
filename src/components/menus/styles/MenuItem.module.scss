@@ -2,21 +2,17 @@
 
 .menuItem {
   padding: 10px;
-  display: flex;
-  align-items: flex-start;
+  @extend .flex-start;
 }
 .group13 {
-  display: flex;
-  align-items: center;
+  @extend .flex-align;
 }
 .frame4 {
-  display: flex;
-  align-items: flex-start;
+  @extend .flex-start;
 }
 .active {
   padding: 2px;
-  display: flex;
-  align-items: center;
+  @extend .flex-align;
   width: 25.5px;
   height: 25.5px;
   min-width: 25.5px;
@@ -30,8 +26,7 @@
 }
 .frame3 {
   padding: 13px 14px 13px 13px;
-  display: flex;
-  align-items: flex-start;
+  @extend .flex-start;
 }
 .myProperties {
   width: 100%;

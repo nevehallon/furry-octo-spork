@@ -1,6 +1,6 @@
 import { Props } from "../../interfaces/ExtendedFormProps";
 import BillBtn from "./BillBtn";
-import styles from "./styles/Form.module.scss";
+import styles from "./styles/ExtendedForm.module.scss";
 
 const { extendedForm, formContainer, formContainer2, nextPart, highlight, nextPart2, header, btn, vectorTwo } = styles;
 

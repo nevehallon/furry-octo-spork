@@ -30,7 +30,7 @@ function App(): JSX.Element {
 
   return (
     <div className={app}>
-      <div className={[menuContainer, hide && collapsed].join(" ")}>
+      <div className={`${menuContainer} ${hide && collapsed}`}>
         <SideMenu hide={addClass} passThru={passThru} setPassThru={(bool: boolean) => setPassThru(bool)} />
         <InnerSideMenu
           {...{ currentStep, setStep }}

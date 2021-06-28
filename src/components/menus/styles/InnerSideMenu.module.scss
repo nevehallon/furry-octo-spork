@@ -37,8 +37,7 @@
   width: 100%;
   min-width: 300px;
   padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
+  @extend .flex-column;
   align-items: flex-start;
   align-self: center;
   z-index: 10;
@@ -48,16 +47,14 @@
   height: calc(13.76% - 20px);
   margin: 0 auto 31px auto;
   padding: 10px;
-  display: flex;
-  align-items: flex-start;
+  @extend .flex-start;
 }
 .pageTitle {
   color: rgba(249, 243, 250, 1);
   @extend .headline-2;
 }
 .menuItem {
-  display: flex;
-  align-items: center;
+  @extend .flex-align;
   background-color: $omnihouse-plus-action;
   height: 19.38%;
   align-self: center;

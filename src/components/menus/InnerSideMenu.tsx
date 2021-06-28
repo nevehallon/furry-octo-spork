@@ -14,7 +14,7 @@ export default ({ hide, passThru, currentStep }: Props & GOP): JSX.Element => {
   const hidden = hide && passThru;
 
   return (
-    <div className={[innerSideMenu, hidden && collapsed, hide && shrink].join(" ")}>
+    <div className={`${innerSideMenu} ${hidden && collapsed} ${hide && shrink}`}>
       <div className={group446}>
         <div className={frame2}>
           <p className={pageTitle}>Contract Builder</p>

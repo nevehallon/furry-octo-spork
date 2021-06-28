@@ -1,8 +1,8 @@
-import styles from "./styles/Form.module.scss";
+import styles from "./styles/TextInput.module.scss";
 
 const { dropDownMenu, rectangle518, labelTwo, label } = styles;
 
-export default function TextInput({
+export default ({
   placeholder,
   setValue,
   inputVal,
@@ -10,7 +10,7 @@ export default function TextInput({
   placeholder: string;
   setValue: (val: string) => void;
   inputVal: string;
-}): JSX.Element {
+}): JSX.Element => {
   const handleChange = ({ target: { value } }: any) => {
     const val = value.trim();
     setValue(val);
@@ -30,4 +30,4 @@ export default function TextInput({
       </div>
     </div>
   );
-}
+};
