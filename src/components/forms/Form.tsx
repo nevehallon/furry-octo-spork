@@ -8,7 +8,8 @@ import FormInputs from "./FormInputs";
 import NextStep from "./NextStep";
 import styles from "./styles/Form.module.scss";
 
-const { topWrapper, formContainer, nextPart, nextPart2, btn, vectorTwo } = styles;
+const { topWrapper, formContainer, nextPart, nextPart2, btn, vectorTwo } =
+  styles;
 
 export default ({ currentStep }: GOP): JSX.Element => {
   const { push } = useHistory();
@@ -42,7 +43,8 @@ export default ({ currentStep }: GOP): JSX.Element => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    (fName && mName && lName && compName && push("/step")) || setError("Please fill out all fields to proceed.");
+    (fName && mName && lName && compName && push("/step")) ||
+      setError("Please fill out all fields to proceed.");
   };
   const handleSet = (val: GOP) => {
     setBillState({ ...billState, ...val });
@@ -53,8 +55,14 @@ export default ({ currentStep }: GOP): JSX.Element => {
   const stepTwo = currentStep > 1;
 
   return (
-    <div className={`${topWrapper} ${stepOne && nextPart} ${stepTwo && nextPart2}`}>
-      <div className={`${formContainer} ${currentStep && nextPart} ${stepTwo && nextPart2}`}>
+    <div
+      className={`${topWrapper} ${stepOne && nextPart} ${stepTwo && nextPart2}`}
+    >
+      <div
+        className={`${formContainer} ${currentStep && nextPart} ${
+          stepTwo && nextPart2
+        }`}
+      >
         {stepZero && (
           <FormInputs
             {...{
@@ -75,14 +83,20 @@ export default ({ currentStep }: GOP): JSX.Element => {
         {!stepZero && (
           <NextStep
             formData={{ fName, mName, lName, compName }}
-            setStep={(val: number) => push(!val ? "/" : `/step${val > 1 && "2"}`)}
+            setStep={(val: number) =>
+              push(!val ? "/" : `/step${val > 1 && "2"}`)
+            }
             {...{ billState, setHL, billEl, currentStep }}
           />
         )}
       </div>
 
       {stepTwo && (
-        <button className={`${styles["btn-danger"]} ${btn}`} onClick={() => alert("Thank you!")} type="button">
+        <button
+          className={`${styles["btn-danger"]} ${btn}`}
+          onClick={() => alert("Thank you!")}
+          type="button"
+        >
           Confirm Contract
           <img
             alt=""

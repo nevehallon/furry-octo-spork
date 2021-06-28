@@ -5,7 +5,14 @@ import Section2 from "./Section2";
 
 const { wrapper, editBtn, vector } = styles;
 
-export default ({ formData, currentStep, action, display, sectionNum, billState }: GOP): JSX.Element => (
+export default ({
+  formData,
+  currentStep,
+  action,
+  display,
+  sectionNum,
+  billState,
+}: GOP): JSX.Element => (
   <div className={wrapper}>
     {sectionNum !== 2 ? (
       <Section {...formData} {...{ currentStep, sectionNum }} />

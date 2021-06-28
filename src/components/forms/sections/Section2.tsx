@@ -1,7 +1,8 @@
 import { GOP } from "../../../interfaces/genericObjectProps";
 import styles from "../styles/NextStep.module.scss";
 
-const { section, step2, section1, section2, Emphasis0, Emphasis2, Emphasis1 } = styles;
+const { section, step2, section1, section2, Emphasis0, Emphasis2, Emphasis1 } =
+  styles;
 
 export default ({ billState, currentStep }: GOP): JSX.Element => {
   const billArr = Object.keys(billState).filter((key) => billState[key] && key);

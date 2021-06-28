@@ -1,7 +1,16 @@
 /* eslint-disable react/no-array-index-key */
 import styles from "./styles/TableOfContents.module.scss";
 
-const { top, divider, container, scrollbar, tableOfContents, group, sectionTOC, text } = styles;
+const {
+  top,
+  divider,
+  container,
+  scrollbar,
+  tableOfContents,
+  group,
+  sectionTOC,
+  text,
+} = styles;
 
 export default (): JSX.Element => (
   <div className={`${top}`}>

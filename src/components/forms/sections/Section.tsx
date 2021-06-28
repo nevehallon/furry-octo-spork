@@ -7,7 +7,13 @@ import styles from "../styles/NextStep.module.scss";
 
 const { section, step2, section1, Emphasis0, Emphasis2, Emphasis1 } = styles;
 
-export default ({ fName, mName, lName, sectionNum, currentStep }: NextStepProps["formData"] & GOP): JSX.Element => {
+export default ({
+  fName,
+  mName,
+  lName,
+  sectionNum,
+  currentStep,
+}: NextStepProps["formData"] & GOP): JSX.Element => {
   const { push } = useHistory();
 
   useEffect(() => {

@@ -4,7 +4,16 @@
 import Image from "../common/Image";
 import styles from "./styles/SideMenu.module.scss";
 
-const { sideMenu, collapsed, shrink, icon, btnContainer, selected, bottomBox, collapseBtn } = styles;
+const {
+  sideMenu,
+  collapsed,
+  shrink,
+  icon,
+  btnContainer,
+  selected,
+  bottomBox,
+  collapseBtn,
+} = styles;
 
 interface Props {
   hide: boolean;
@@ -17,7 +26,10 @@ export default ({ hide, passThru, setPassThru }: Props): JSX.Element => {
   return (
     <div className={`${sideMenu} ${hidden && collapsed} ${hide && shrink}`}>
       <div className={icon}>
-        <img alt="" src="https://static.overlay-tech.com/assets/75f7c1aa-f1dd-4146-9f3d-f472a5ee6f29.svg" />
+        <img
+          alt=""
+          src="https://static.overlay-tech.com/assets/75f7c1aa-f1dd-4146-9f3d-f472a5ee6f29.svg"
+        />
       </div>
 
       <div className={btnContainer}>
@@ -79,9 +91,16 @@ export default ({ hide, passThru, setPassThru }: Props): JSX.Element => {
         </div>
       </div>
       <div className={bottomBox}>
-        <Image alt="icon" src="https://static.overlay-tech.com/assets/ca9201fa-5b25-4bfc-8f16-30ef8cf37247.svg" />
+        <Image
+          alt="icon"
+          src="https://static.overlay-tech.com/assets/ca9201fa-5b25-4bfc-8f16-30ef8cf37247.svg"
+        />
         {hide && (
-          <button className={collapseBtn} onClick={() => setPassThru(!passThru)} type="button">
+          <button
+            className={collapseBtn}
+            onClick={() => setPassThru(!passThru)}
+            type="button"
+          >
             <Image
               alt="icon"
               imgClass={`btnImg ${!hidden && "flip"}`}

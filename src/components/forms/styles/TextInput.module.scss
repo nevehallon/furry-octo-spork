@@ -1,0 +1,29 @@
+@import "../../../styles/index.scss";
+
+.dropDownMenu {
+  height: calc(13.29% - 17px);
+  margin: 0 20px;
+  padding: 1px 0 16px;
+  position: relative;
+}
+.rectangle518 {
+  width: 99.54%;
+  height: 70.77%;
+  background-color: rgba(27, 23, 28, 1);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  border: 1px solid $omnihouse-plus-action;
+}
+.label {
+  width: 100%;
+  @extend .subtitle-2;
+  font-weight: bolder;
+  margin: 0.5px;
+  padding: 10px;
+  color: #fff;
+}
+.labelTwo {
+  position: relative;
+}

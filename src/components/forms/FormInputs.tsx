@@ -39,16 +39,33 @@ export default ({
     </div>
     <div className={frame480}>
       <p className={p}>
-        Enter your full name and/or the company name that the tenant(s) is entering the agreement with
+        Enter your full name and/or the company name that the tenant(s) is
+        entering the agreement with
       </p>
     </div>
-    {error && <span style={{ color: "red", textAlign: "center", fontSize: "26px" }}>*{error}*</span>}
+    {error && (
+      <span style={{ color: "red", textAlign: "center", fontSize: "26px" }}>
+        *{error}*
+      </span>
+    )}
 
     <form className={form} onSubmit={(e) => handleSubmit(e)}>
-      <TextInput inputVal={fName} placeholder="First name" setValue={setFName} />
-      <TextInput inputVal={mName} placeholder="Middle name(s)" setValue={setMName} />
+      <TextInput
+        inputVal={fName}
+        placeholder="First name"
+        setValue={setFName}
+      />
+      <TextInput
+        inputVal={mName}
+        placeholder="Middle name(s)"
+        setValue={setMName}
+      />
       <TextInput inputVal={lName} placeholder="Surname" setValue={setLName} />
-      <TextInput inputVal={compName} placeholder="Company name" setValue={setCompName} />
+      <TextInput
+        inputVal={compName}
+        placeholder="Company name"
+        setValue={setCompName}
+      />
 
       <div className={btnContainer}>
         <button className={nextButtonTwo} type="submit">

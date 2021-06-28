@@ -18,7 +18,15 @@ function App(): JSX.Element {
   const [currentStep, setStep] = useState(0);
   const { pathname } = useLocation();
 
-  useEffect(() => (pathname === "/" ? setStep(0) : pathname === "/step" ? setStep(1) : setStep(2)), [pathname]);
+  useEffect(
+    () =>
+      pathname === "/"
+        ? setStep(0)
+        : pathname === "/step"
+        ? setStep(1)
+        : setStep(2),
+    [pathname]
+  );
 
   useEffect(() => {
     if (hide) {
@@ -31,7 +39,11 @@ function App(): JSX.Element {
   return (
     <div className={app}>
       <div className={`${menuContainer} ${hide && collapsed}`}>
-        <SideMenu hide={addClass} passThru={passThru} setPassThru={(bool: boolean) => setPassThru(bool)} />
+        <SideMenu
+          hide={addClass}
+          passThru={passThru}
+          setPassThru={(bool: boolean) => setPassThru(bool)}
+        />
         <InnerSideMenu
           {...{ currentStep, setStep }}
           hide={addClass}
