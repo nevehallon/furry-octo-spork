@@ -52,6 +52,7 @@
 .pageTitle {
   color: rgba(249, 243, 250, 1);
   @include headline-2;
+  @include extra-bold;
 }
 .menuItem {
   @extend .flex-align;

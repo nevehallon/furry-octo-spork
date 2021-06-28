@@ -37,6 +37,7 @@
 }
 .tableOfContents {
   @include headline-2;
+  @include extra-bold;
   color: #eb00ff;
   align-self: stretch;
   margin-bottom: 11px;
