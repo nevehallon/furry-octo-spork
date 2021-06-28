@@ -2,7 +2,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --base=/dist/",
     "serve": "vite preview",
     "lint": "eslint src/. --config .eslintrc.json --ext .ts --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
