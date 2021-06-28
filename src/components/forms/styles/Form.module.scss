@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   place-content: center;
-  &.nextPart {
+  &.middleStep {
     display: grid;
     grid-template-columns: 1fr 0.75fr;
     padding: 0 20px;
@@ -19,10 +19,10 @@
       max-height: calc(100vh - 42.5px);
     }
   }
-  &.nextPart2 {
+  &.lastStep {
     @extend .extendedForm;
     gap: 15px !important;
-    align-self: center !important;
+    align-self: center;
     .formContainer {
       height: 97%;
       align-self: end;
@@ -47,11 +47,11 @@
   align-self: center;
   width: clamp(350px, 70%, 450px);
   box-shadow: 0 0 20px 0px #201b20;
-  &.nextPart {
+  &.middleStep {
     width: clamp(230px, 100%, 650px);
     padding-left: 10%;
     @media only screen and (max-width: 1190px) {
-      &:not(.nextPart2) {
+      &:not(.lastStep) {
         min-width: 100%;
         margin: 20px 0;
       }
@@ -65,17 +65,8 @@
       }
     }
   }
-  &.formContainer2 {
-    padding: 20px;
-    .header {
-      @extend .subtitle-2;
-      @extend .extra-bold;
-      letter-spacing: 1px;
-      transition: all 300ms ease-in-out;
-    }
-  }
 
-  &.nextPart2 {
+  &.lastStep {
     padding: 20px;
   }
 }
@@ -99,8 +90,8 @@
     border-color: #dc3545;
     width: 82%;
     padding: 0.7rem 0.5rem;
-    @extend .body-1;
-    @extend .extra-bold;
+    @include body-1;
+    @include extra-bold;
     letter-spacing: 1px;
     font-size: clamp(0.95rem, 1vw, 1.2rem);
     height: 100%;
@@ -125,9 +116,31 @@
   }
 }
 .highlight {
-  box-shadow: 0 0 10px #fff;
+  animation: lightUp 0.5s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 6 alternate;
 }
 .highlight-text {
-  transform: translate(5px, -10px);
-  color: $omnihouse-plus-action;
+  animation: blink 0.5s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 6 alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    @include zero;
+  }
+  100% {
+    @include zero;
+  }
+}
+@keyframes blink {
+  0% {
+    @include zero;
+  }
+  100% {
+    @include hero;
+  }
+}
+
+@keyframes lightUp {
+  to {
+    box-shadow: 0 0 10px #fff;
+  }
 }

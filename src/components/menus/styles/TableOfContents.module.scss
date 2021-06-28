@@ -36,13 +36,13 @@
   margin: 0 0 20px;
 }
 .tableOfContents {
-  @extend .headline-2;
+  @include headline-2;
   color: #eb00ff;
   align-self: stretch;
   margin-bottom: 11px;
 }
 .sectionTOC {
-  @extend .headline-2;
+  @include button-1;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   color: #fff;
   margin-bottom: 9px;
@@ -51,6 +51,6 @@
 
 .text {
   margin: 0 0 5px;
-  @extend .subtitle-2;
+  @include button-1;
   color: #fff;
 }

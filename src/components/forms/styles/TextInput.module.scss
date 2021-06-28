@@ -18,8 +18,8 @@
 }
 .label {
   width: 100%;
-  @extend .subtitle-2;
-  font-weight: bolder;
+  @include body-1;
+  font-size: 1.1rem;
   margin: 0.5px;
   padding: 10px;
   color: #fff;

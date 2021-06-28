@@ -31,8 +31,8 @@
 }
 .p {
   color: rgba(249, 243, 250, 1);
-  @extend .body-1;
-  @extend .extra-bold;
+  @include body-1;
+  @include extra-bold;
   letter-spacing: 0.5px;
   font-size: clamp(1.1rem, 3.5vw, 1.3rem);
 }
@@ -81,7 +81,7 @@ input:focus {
   color: rgba(249, 243, 250, 1);
   @extend .flex-align;
   text-align: center;
-  @extend .button-1;
+  @include button-1;
 }
 .frame13 {
   padding: 10px 5px 10px 0;

@@ -6,7 +6,7 @@ $omnihouse-plus-action: #93227f;
 
 /* Typographies */
 .base-text {
-  font: 16px Roboto;
+  font-size: 16px;
 }
 .base-bold {
   font-weight: 400;
@@ -16,26 +16,37 @@ $omnihouse-plus-action: #93227f;
   font-weight: 700;
   line-height: normal;
 }
-.extra-bold {
+@mixin extra-bold {
   text-shadow: 0px 1px, 1px 0px, 0px -1px, -1px 0px currentColor;
   letter-spacing: 2px;
 }
-.body-1 {
+@mixin body-1 {
   @extend .base-text;
   @extend .base-bold;
 }
-.button-1 {
+@mixin button-1 {
   @extend .base-text;
   @extend .base-bolder;
 }
-.headline-2 {
-  font: 25px Roboto;
+@mixin headline-2 {
+  font-size: 25px;
   @extend .base-bold;
 }
-.subtitle-2 {
-  font: 20px Roboto;
+@mixin subtitle-2 {
+  font-size: 20px;
   @extend .base-bold;
 }
+
+/* animations */
+@mixin zero {
+  // -webkit-transform: scale(0.9);
+  // transform: scale(0.9);
+}
+@mixin hero {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
 .radius-and-shadow {
   border-radius: 10px;
   box-shadow: inset 0 0 6px #000;
@@ -119,7 +130,7 @@ button::-moz-focus-inner {
 }
 .header {
   margin: 30px 0 10px;
-  @extend .headline-2;
+  @include headline-2;
   color: #fff;
 }
 .logoutBlack24dp2 {
@@ -130,12 +141,19 @@ button::-moz-focus-inner {
   flex: 1;
   object-fit: cover;
 }
-.marketplaceButton,
-.marketplaceButtonTwo {
+.menuBtn {
   align-items: flex-start;
-  border-radius: 25px;
-  padding: 10px;
+  border-radius: 3vh;
+  padding: 10%;
   display: flex;
+  place-items: center;
+  margin: 0 auto;
+  height: 10vh;
+  min-height: 8vh;
+  width: 10vh;
+  min-width: 8vh;
+  max-width: 78px;
+  max-height: 78px;
 }
 .marketplaceButton {
   background-color: $omnicheck;
@@ -145,27 +163,27 @@ button::-moz-focus-inner {
 }
 .marketplaceButtonThree {
   background-color: #656262;
-  border-radius: 25px;
-  padding: 10px;
-  @extend .flex-start;
 }
 .group {
-  padding: 7.25px;
   @extend .flex-align;
+  margin: 0 auto;
 }
 .vector2 {
   flex: 1;
-  height: 50px;
-  width: 50px;
+  height: 6vh;
+  min-height: 20px;
+  width: 6vh;
+  min-width: 20px;
+  padding: 10%;
 }
 .bottomText {
   width: 100%;
   height: 15.97%;
   color: #fff;
-  @extend .button-1;
+  @include button-1;
   font-size: 1.1rem;
   max-width: 80px;
-  margin: 7.5px 0 0;
+  margin: 7.5px auto 0;
 }
 .btnImg {
   width: 100%;

@@ -5,11 +5,10 @@ import { useHistory } from "react-router-dom";
 import { GOP } from "../../interfaces/genericObjectProps";
 import ExtendedForm from "./ExtendedForm";
 import FormInputs from "./FormInputs";
-import NextStep from "./NextStep";
+import NextSteps from "./NextSteps";
 import styles from "./styles/Form.module.scss";
 
-const { topWrapper, formContainer, nextPart, nextPart2, btn, vectorTwo } =
-  styles;
+const { topWrapper, formContainer, middleStep, lastStep, btn } = styles;
 
 export default ({ currentStep }: GOP): JSX.Element => {
   const { push } = useHistory();
@@ -43,8 +42,7 @@ export default ({ currentStep }: GOP): JSX.Element => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    (fName && mName && lName && compName && push("/step")) ||
-      setError("Please fill out all fields to proceed.");
+    (fName && mName && lName && compName && push("/step")) || setError("Please fill out all fields to proceed.");
   };
   const handleSet = (val: GOP) => {
     setBillState({ ...billState, ...val });
@@ -55,14 +53,8 @@ export default ({ currentStep }: GOP): JSX.Element => {
   const stepTwo = currentStep > 1;
 
   return (
-    <div
-      className={`${topWrapper} ${stepOne && nextPart} ${stepTwo && nextPart2}`}
-    >
-      <div
-        className={`${formContainer} ${currentStep && nextPart} ${
-          stepTwo && nextPart2
-        }`}
-      >
+    <div className={`${topWrapper} ${stepOne && middleStep} ${stepTwo && lastStep}`}>
+      <div className={`${formContainer} ${currentStep && middleStep} ${stepTwo && lastStep}`}>
         {stepZero && (
           <FormInputs
             {...{
@@ -81,28 +73,18 @@ export default ({ currentStep }: GOP): JSX.Element => {
         )}
 
         {!stepZero && (
-          <NextStep
+          <NextSteps
             formData={{ fName, mName, lName, compName }}
-            setStep={(val: number) =>
-              push(!val ? "/" : `/step${val > 1 && "2"}`)
-            }
-            {...{ billState, setHL, billEl, currentStep }}
+            setStep={(val: number) => push(!val ? "/" : `/step${val > 1 && "2"}`)}
+            {...{ billState, highlighted, setHL, billEl, currentStep }}
           />
         )}
       </div>
 
       {stepTwo && (
-        <button
-          className={`${styles["btn-danger"]} ${btn}`}
-          onClick={() => alert("Thank you!")}
-          type="button"
-        >
+        <button className={`${styles["btn-danger"]} ${btn}`} onClick={() => alert("Thank you!")} type="button">
           Confirm Contract
-          <img
-            alt=""
-            className={vectorTwo}
-            src="https://static.overlay-tech.com/assets/34ffbf7b-cbc6-4af9-8f8a-b266b23ef2c1.svg"
-          />
+          <img alt="" src="https://static.overlay-tech.com/assets/34ffbf7b-cbc6-4af9-8f8a-b266b23ef2c1.svg" />
         </button>
       )}
 
