@@ -4,7 +4,7 @@ export interface Size {
   width: number | undefined;
   height: number | undefined;
 }
-// Usage
+// Usage:
 // function App() {
 //   const size: Size = useWindowSize();
 //   return (
@@ -13,10 +13,10 @@ export interface Size {
 //     </div>
 //   );
 // }
+
 // Hook
 export function useWindowSize(): Size {
   // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState<Size>({
     width: undefined,
     height: undefined,
