@@ -10,4 +10,5 @@ export default defineConfig({
     //   targets: ["defaults"],
     // }),
   ],
+  base: "/furry-octo-spork/",
 });
